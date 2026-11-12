@@ -261,6 +261,69 @@ footer{background:#302c2a;border-top:0}
   .ain{padding-bottom:52px}
 }
 
+
+/* 熊肯作｜溫暖圓潤版：以親和的手作質感搭配抽象織線裝飾 */
+:root{--ground:#f8f1e7;--surface:#fffaf5;--kinu:#ead8c9;--ink:#37312f;--muted:#756b66;--line:#e9dcd0;--line-strong:#c4aa9b;--grain:#f1e7dc;--ai:#a74e49;--on-ai:#fffaf5;--bengara:#a74e49;--stitch:#e0b8a9;--r-sm:14px;--r-md:22px;--r-lg:28px}
+body{background-color:var(--ground);background-image:radial-gradient(circle at 15% 12%,rgba(232,198,182,.2),transparent 30%),radial-gradient(circle at 85% 45%,rgba(138,152,125,.10),transparent 28%);background-size:auto}
+header{background:rgba(255,250,245,.95);border-bottom:1px solid #eadcd0;border-radius:0 0 20px 20px;box-shadow:0 5px 20px rgba(65,45,39,.045)}
+.brand a{font-family:var(--font-sans);font-weight:700;letter-spacing:.055em}
+.nav button{border-radius:999px;transition:background .2s,color .2s}
+.nav button:hover{background:#f3e1d8;color:var(--bengara)}
+.search{background:#fff;border:1px solid var(--line);border-radius:999px;padding:1px 14px;box-shadow:0 3px 10px rgba(65,45,39,.04)}
+.search:focus-within{border-color:var(--bengara);box-shadow:0 0 0 3px rgba(167,78,73,.1)}
+.hero{height:clamp(420px,57vw,650px);border-bottom:0;border-radius:0 0 38px 38px}
+.hero::after{background:linear-gradient(90deg,rgba(38,28,26,.72),rgba(38,28,26,.28) 64%,rgba(38,28,26,.04))}
+.hcopy h1{font-family:var(--font-sans);font-weight:700;letter-spacing:.055em}
+.hbtn{border-radius:999px;padding:12px 27px;background:#a74e49;border-color:#a74e49;box-shadow:0 6px 18px rgba(77,29,25,.18)}
+.hbtn:hover{background:#8e403d}
+.dots button{height:7px;width:7px;border-radius:999px;transition:width .2s}
+.dots button[aria-pressed=true]{width:26px;background:#fff}
+.sec.home{padding-top:62px}
+.kicker{font-family:var(--font-sans);letter-spacing:.19em;color:var(--bengara)}
+.sec .h{font-family:var(--font-sans);font-weight:700;letter-spacing:.07em}
+.rule{width:50px;border:0;height:5px;background:#e8c6b6;border-radius:99px}
+.catgrid{gap:22px}
+.ccard{background:#fffaf5;border:1px solid #f0e2d7;border-radius:25px;padding:12px 12px 19px;box-shadow:0 8px 24px rgba(71,48,40,.07);overflow:hidden}
+.ccard::after{display:none}
+.ccard .cimg{border-radius:17px;background:#f0e4d9}
+.ccard .cn{font-family:var(--font-sans);font-weight:700}
+.ccard:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(71,48,40,.12)}
+.ccard[aria-pressed=true]{border:2px solid #a74e49;background:#fff7f1}
+.chip{border-radius:999px;padding:5px 15px;background:#fffaf5;border-color:#e0cbbd}
+.chip[aria-pressed=true],.chip.pat[aria-pressed=true]{background:#a74e49;border-color:#a74e49}
+select{border-radius:999px;padding:7px 12px}
+.grid{gap:34px 22px}
+.pimg{border:1px solid #f0e2d7;border-radius:24px;background:#fffaf5;padding:9px;box-shadow:0 7px 20px rgba(71,48,40,.07);overflow:hidden}
+.pimg .zw{border-radius:17px}
+.grid .card:nth-child(3n+1) .pimg,.grid .card:nth-child(3n+2) .pimg{transform:none}
+.card:hover .pimg{border-color:#d9aa9b;box-shadow:0 12px 25px rgba(71,48,40,.12)}
+.nm{font-family:var(--font-sans);font-weight:600}
+.badge{border-radius:999px;transform:none}
+.more{border-radius:999px}
+.about{background:#fffaf5;border-radius:40px 40px 0 0;overflow:hidden}
+.about::before{top:0;height:9px;border:0;background:repeating-linear-gradient(90deg,#a74e49 0 20px,#e8c6b6 20px 32px,#8a987d 32px 44px,#fffaf5 44px 52px)}
+.ain{padding-top:16px}
+.story h3,.info2 h3{font-family:var(--font-sans);font-weight:700}
+.story h3::before,.info2 h3::before{height:15px;width:15px;border-radius:5px;background:#e8c6b6;vertical-align:-1px;margin-right:9px}
+.clist a{color:#a74e49}
+.social a{background:#f8f1e7;border:1px solid #e8d3c5;border-radius:999px;padding:9px 18px;font-weight:600}
+.social a:hover{background:#f3e1d8}
+footer{background:#37312f}
+.dlg{border-radius:26px}
+.gal .big{border-radius:18px}
+.btn{border-radius:999px}
+.btn.primary{background:#a74e49;border-color:#a74e49}
+.contact{border-radius:18px}
+@media(max-width:720px){.hero{border-radius:0 0 25px 25px}.about{border-radius:28px 28px 0 0}.hcopy h1{font-size:32px}.sec.home{padding-top:43px}}
+
+
+/* 首頁主圖：橫向織布幾何條紋，無人物、無中央圓形徽章。 */
+.hero{height:clamp(260px,31vw,460px);border-radius:0 0 34px 34px;background:#b72e30;overflow:hidden}
+.hero::after{display:none!important}
+.hero .hcopy,.hero .dots{display:none!important}
+.hero .slide,.hero .slide.on{opacity:1;transition:none}
+.hero .slide.pattern{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjQ4MCIgdmlld0JveD0iMCAwIDE2MDAgNDgwIj48cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI0ODAiIGZpbGw9IiNiNzJlMzAiLz48cmVjdCB5PSIxOCIgd2lkdGg9IjE2MDAiIGhlaWdodD0iOCIgZmlsbD0iI2U3YjVhMCIvPjxyZWN0IHk9IjM4IiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIyMiIgZmlsbD0iIzI0MjIyNSIvPjxyZWN0IHk9IjY4IiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5IiBmaWxsPSIjZjVkMGFlIi8+PHJlY3QgeT0iOTEiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjM1IiBmaWxsPSIjNzc3MDcxIi8+PHJlY3QgeT0iMTM2IiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMSIgZmlsbD0iIzI4MjUyYSIvPjxyZWN0IHk9IjE1OSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTIiIGZpbGw9IiNkOWI4YWEiLz48cmVjdCB5PSIxODUiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjM4IiBmaWxsPSIjYjcyZTMwIi8+PHJlY3QgeT0iMjM0IiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzI2MjQyNyIvPjxyZWN0IHk9IjI1OSIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMzgiIGZpbGw9IiM3NzcwNzEiLz48cmVjdCB5PSIzMTAiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMjgyNTJhIi8+PHJlY3QgeT0iMzM0IiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMiIgZmlsbD0iI2Q5YjhhYSIvPjxyZWN0IHk9IjM2NCIgd2lkdGg9IjE2MDAiIGhlaWdodD0iMjgiIGZpbGw9IiNiNzJlMzAiLz48cmVjdCB5PSI0MDYiIHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMjUyMzI3Ii8+PHJlY3QgeT0iNDM3IiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI3IiBmaWxsPSIjZTdiNWEwIi8+PHBhdGggZD0iTTE4IDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTc2IDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEzNCA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik0xOTIgOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNMjUwIDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTMwOCA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik0zNjYgOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNNDI0IDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTQ4MiA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik01NDAgOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNNTk4IDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTY1NiA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik03MTQgOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNNzcyIDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTgzMCA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik04ODggOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNOTQ2IDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEwMDQgOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNMTA2MiA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik0xMTIwIDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTExNzggOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNMTIzNiA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik0xMjk0IDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEzNTIgOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNMTQxMCA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik0xNDY4IDk4IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTE1MjYgOTggbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNMTU4NCA5OCBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik0xOCAyNjUgbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNNzYgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEzNCAyNjUgbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNMTkyIDI2NSBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik0yNTAgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTMwOCAyNjUgbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNMzY2IDI2NSBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik00MjQgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTQ4MiAyNjUgbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNNTQwIDI2NSBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik01OTggMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTY1NiAyNjUgbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNNzE0IDI2NSBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik03NzIgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTgzMCAyNjUgbDMyIDAgLTMyIDIzIHoiIGZpbGw9IiNmMmM1NzgiLz48cGF0aCBkPSJNODg4IDI2NSBsMzIgMCAtMzIgMjMgeiIgZmlsbD0iI2YyYzU3OCIvPjxwYXRoIGQ9Ik05NDYgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEwMDQgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEwNjIgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTExMjAgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTExNzggMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEyMzYgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEyOTQgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTEzNTIgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTE0MTAgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTE0NjggMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTE1MjYgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTE1ODQgMjY1IGwzMiAwIC0zMiAyMyB6IiBmaWxsPSIjZjJjNTc4Ii8+PHBhdGggZD0iTTM0IDE3MiBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTEyNiAxNzIgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0yMTggMTcyIGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNMzEwIDE3MiBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTQwMiAxNzIgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik00OTQgMTcyIGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNNTg2IDE3MiBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTY3OCAxNzIgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik03NzAgMTcyIGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNODYyIDE3MiBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTk1NCAxNzIgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0xMDQ2IDE3MiBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTExMzggMTcyIGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNMTIzMCAxNzIgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0xMzIyIDE3MiBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTE0MTQgMTcyIGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNMTUwNiAxNzIgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0xNTk4IDE3MiBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTM0IDM0OSBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTEyNiAzNDkgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0yMTggMzQ5IGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNMzEwIDM0OSBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTQwMiAzNDkgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik00OTQgMzQ5IGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNNTg2IDM0OSBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTY3OCAzNDkgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik03NzAgMzQ5IGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNODYyIDM0OSBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTk1NCAzNDkgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0xMDQ2IDM0OSBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTExMzggMzQ5IGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNMTIzMCAzNDkgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0xMzIyIDM0OSBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PHBhdGggZD0iTTE0MTQgMzQ5IGwyMiAxNCAtMjIgMTQgLTIyIC0xNHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwZDZjMiIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNjUiLz48cGF0aCBkPSJNMTUwNiAzNDkgbDIyIDE0IC0yMiAxNCAtMjIgLTE0eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjBkNmMyIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9Ii42NSIvPjxwYXRoIGQ9Ik0xNTk4IDM0OSBsMjIgMTQgLTIyIDE0IC0yMiAtMTR6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGQ2YzIiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY1Ii8+PC9zdmc+");background-position:center;background-size:cover;background-repeat:no-repeat}
+@media(max-width:720px){.hero{height:260px;border-radius:0 0 24px 24px}.hero .slide.pattern{background-size:auto 100%}}
 </style>
 </head>
 <body>
@@ -366,6 +429,11 @@ const hasPrice=p=>p.price!==null&&p.price!==""&&p.price!==undefined&&!isNaN(p.pr
 /* ---- Banner ---- */
 let heroTimer;
 function renderHero(){
+  clearInterval(heroTimer);
+  $("slides").innerHTML='<div class="slide pattern on" aria-label="紅、黑、灰色幾何織紋主視覺"></div>';
+  $("dots").innerHTML="";
+  return;
+
   const store=S["店名"]||"熊肯作織布的家";
   $("hK").textContent=S["形象小標"]||"手織 · 工房";
   $("hT").textContent=S["形象標題"]||store;
@@ -394,7 +462,7 @@ function renderAbout(){
   // 店家已確認的正式資訊：固定顯示，不被試算表舊設定覆蓋。
   const contactSettings={
     "地址":"546南投縣仁愛鄉互助村中華路132號",
-    "營業時間":"週二至週六 10:00–17:00\\n週日、週一公休",
+    "營業時間":"週二至週六 10:00–17:00\n週日、週一公休",
     "電話":"0915-652-172",
     "Email":"lillyjimmy88@gmail.com"
   };
