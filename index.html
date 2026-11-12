@@ -187,6 +187,135 @@ footer{border-top:1px solid var(--line);background:var(--ground)}
 .badge{transform:rotate(-3deg)}
 /* 頁首背景與紙底一致 */
 header{background-color:rgba(242,237,226,.94);backdrop-filter:blur(6px)}
+
+/* ===== 熊肯作｜現代賽德克織藝品牌視覺 =====
+   以織布的經緯、菱形節奏及暖紅／炭黑配色為視覺語彙；
+   裝飾圖案為抽象設計，不代表特定傳統圖騰。 */
+:root{
+  --ground:#f5f0e8;--surface:#fffaf3;--kinu:#e8ded0;
+  --ink:#292625;--muted:#6e6660;--line:#ded3c7;--line-strong:#998a7d;
+  --grain:#eee5da;--ai:#34302f;--on-ai:#fffaf3;
+  --bengara:#a63e37;--on-bengara:#fffaf3;--stitch:#c2a69a;
+  --r-sm:4px;--r-md:8px;--r-lg:12px;
+}
+body{background-image:linear-gradient(90deg,rgba(166,62,55,.025) 1px,transparent 1px),linear-gradient(rgba(166,62,55,.025) 1px,transparent 1px);background-size:40px 40px}
+header{background:rgba(250,246,239,.96);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(41,38,37,.04)}
+.hin{align-items:center;padding-top:16px;padding-bottom:16px}
+.brand a{font-size:23px;letter-spacing:.09em}
+.brand span{font-size:12px;letter-spacing:.1em}
+.nav button{font-family:var(--font-sans);font-size:13px;font-weight:500;letter-spacing:.12em}
+.nav button:hover{color:var(--bengara)}
+.nav button:focus-visible{outline-color:var(--bengara)}
+.search{border-bottom-color:var(--line-strong)}
+.hero{height:clamp(390px,57vw,660px);background:#42332e}
+.hero .slide.pattern{background-color:#5a3432;background-image:repeating-linear-gradient(90deg,transparent 0 52px,rgba(255,250,243,.08) 52px 54px),repeating-linear-gradient(0deg,transparent 0 52px,rgba(255,250,243,.06) 52px 54px)}
+.hero::after{background:linear-gradient(90deg,rgba(26,23,22,.78),rgba(26,23,22,.3) 56%,rgba(26,23,22,.07))}
+.hcopy{padding-bottom:clamp(40px,7vw,84px)}
+.hcopy .kicker{color:#f3c7b4;font-family:var(--font-sans);letter-spacing:.25em}
+.hcopy h1{font-size:clamp(32px,5.2vw,58px);font-weight:600;letter-spacing:.08em;max-width:14em}
+.hcopy p{font-size:15px;line-height:2;max-width:34em}
+.hbtn{background:var(--bengara);border-color:var(--bengara);font-weight:600;border-radius:4px;transition:background .2s,transform .2s}
+.hbtn:hover{background:#8f302c;transform:translateY(-2px)}
+.sec.home{padding-top:64px}
+.kicker{font-family:var(--font-sans);color:var(--bengara);font-weight:700;letter-spacing:.22em}
+.sec .h{font-size:clamp(25px,3vw,32px);letter-spacing:.1em}
+.rule{width:56px;border-top:3px solid var(--bengara);opacity:1}
+.lbl{color:var(--muted)}
+.catgrid{gap:22px}
+.ccard{border-radius:8px;padding:10px 10px 18px;box-shadow:0 4px 18px rgba(41,38,37,.035);transition:transform .25s,box-shadow .25s,border-color .25s}
+.ccard::after{inset:6px;border:1px solid rgba(166,62,55,.26);border-radius:4px}
+.ccard:hover{border-color:var(--bengara);box-shadow:0 10px 24px rgba(41,38,37,.09)}
+.ccard .ck{color:var(--bengara)}
+.ccard .cn{font-size:17px}
+.ccard[aria-pressed="true"]{border-color:var(--bengara);box-shadow:inset 0 0 0 1px var(--bengara)}
+.ccard[aria-pressed="true"]::after{border-color:var(--bengara)}
+.ccard[aria-pressed="true"] .cc::before{color:var(--bengara)}
+.chip[aria-pressed="true"],.chip.pat[aria-pressed="true"]{background:var(--bengara);border-color:var(--bengara);color:#fff}
+.pimg{border-radius:8px;padding:7px;background:var(--surface)}
+.grid .card:nth-child(3n+1) .pimg,.grid .card:nth-child(3n+2) .pimg{transform:none}
+.card:hover .pimg{border-color:var(--bengara)}
+.nm{font-family:var(--font-sans);font-size:14px;font-weight:600}
+.pt{color:var(--bengara)}
+.badge{transform:none}
+.about{background:var(--surface);border-top:0}
+.about::before{top:0;border-top:8px solid var(--bengara);height:8px;background:repeating-linear-gradient(90deg,#a63e37 0 18px,#e6b5a2 18px 24px,#34302f 24px 30px,#a63e37 30px 48px);border:0}
+.ain{padding-top:16px;padding-bottom:72px}
+.story h3,.info2 h3{font-size:20px;color:var(--ink)}
+.story h3::before,.info2 h3::before{content:"";display:inline-block;width:5px;height:19px;background:var(--bengara);vertical-align:-3px;margin-right:12px}
+.story p{color:var(--muted)}
+.clist{gap:13px 20px}
+.clist a{color:var(--bengara)}
+.social a{border-radius:5px;background:#fff;color:var(--ink);transition:color .2s,border-color .2s,transform .2s}
+.social a:hover{color:var(--bengara);border-color:var(--bengara);transform:translateY(-2px)}
+footer{background:#302c2a;border-top:0}
+.fin{color:#f2e7dc}
+.btn.primary{background:var(--bengara);border-color:var(--bengara)}
+.btn.link{color:var(--bengara)}
+:focus-visible{outline-color:var(--bengara)}
+@media(max-width:720px){
+  .hero{height:460px}
+  .hero::after{background:linear-gradient(0deg,rgba(26,23,22,.82),rgba(26,23,22,.2))}
+  .hcopy{padding:0 20px 42px}
+  .hcopy h1{font-size:34px}
+  .sec.home{padding-top:44px}
+  .ain{padding-bottom:52px}
+}
+
+
+/* 熊肯作｜溫暖圓潤版：以親和的手作質感搭配抽象織線裝飾 */
+:root{--ground:#f8f1e7;--surface:#fffaf5;--kinu:#ead8c9;--ink:#37312f;--muted:#756b66;--line:#e9dcd0;--line-strong:#c4aa9b;--grain:#f1e7dc;--ai:#a74e49;--on-ai:#fffaf5;--bengara:#a74e49;--stitch:#e0b8a9;--r-sm:14px;--r-md:22px;--r-lg:28px}
+body{background-color:var(--ground);background-image:radial-gradient(circle at 15% 12%,rgba(232,198,182,.2),transparent 30%),radial-gradient(circle at 85% 45%,rgba(138,152,125,.10),transparent 28%);background-size:auto}
+header{background:rgba(255,250,245,.95);border-bottom:1px solid #eadcd0;border-radius:0 0 20px 20px;box-shadow:0 5px 20px rgba(65,45,39,.045)}
+.brand a{font-family:var(--font-sans);font-weight:700;letter-spacing:.055em}
+.nav button{border-radius:999px;transition:background .2s,color .2s}
+.nav button:hover{background:#f3e1d8;color:var(--bengara)}
+.search{background:#fff;border:1px solid var(--line);border-radius:999px;padding:1px 14px;box-shadow:0 3px 10px rgba(65,45,39,.04)}
+.search:focus-within{border-color:var(--bengara);box-shadow:0 0 0 3px rgba(167,78,73,.1)}
+.hero{height:clamp(420px,57vw,650px);border-bottom:0;border-radius:0 0 38px 38px}
+.hero::after{background:linear-gradient(90deg,rgba(38,28,26,.72),rgba(38,28,26,.28) 64%,rgba(38,28,26,.04))}
+.hcopy h1{font-family:var(--font-sans);font-weight:700;letter-spacing:.055em}
+.hbtn{border-radius:999px;padding:12px 27px;background:#a74e49;border-color:#a74e49;box-shadow:0 6px 18px rgba(77,29,25,.18)}
+.hbtn:hover{background:#8e403d}
+.dots button{height:7px;width:7px;border-radius:999px;transition:width .2s}
+.dots button[aria-pressed=true]{width:26px;background:#fff}
+.sec.home{padding-top:62px}
+.kicker{font-family:var(--font-sans);letter-spacing:.19em;color:var(--bengara)}
+.sec .h{font-family:var(--font-sans);font-weight:700;letter-spacing:.07em}
+.rule{width:50px;border:0;height:5px;background:#e8c6b6;border-radius:99px}
+.catgrid{gap:22px}
+.ccard{background:#fffaf5;border:1px solid #f0e2d7;border-radius:25px;padding:12px 12px 19px;box-shadow:0 8px 24px rgba(71,48,40,.07);overflow:hidden}
+.ccard::after{display:none}
+.ccard .cimg{border-radius:17px;background:#f0e4d9}
+.ccard .cn{font-family:var(--font-sans);font-weight:700}
+.ccard:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(71,48,40,.12)}
+.ccard[aria-pressed=true]{border:2px solid #a74e49;background:#fff7f1}
+.chip{border-radius:999px;padding:5px 15px;background:#fffaf5;border-color:#e0cbbd}
+.chip[aria-pressed=true],.chip.pat[aria-pressed=true]{background:#a74e49;border-color:#a74e49}
+select{border-radius:999px;padding:7px 12px}
+.grid{gap:34px 22px}
+.pimg{border:1px solid #f0e2d7;border-radius:24px;background:#fffaf5;padding:9px;box-shadow:0 7px 20px rgba(71,48,40,.07);overflow:hidden}
+.pimg .zw{border-radius:17px}
+.grid .card:nth-child(3n+1) .pimg,.grid .card:nth-child(3n+2) .pimg{transform:none}
+.card:hover .pimg{border-color:#d9aa9b;box-shadow:0 12px 25px rgba(71,48,40,.12)}
+.nm{font-family:var(--font-sans);font-weight:600}
+.badge{border-radius:999px;transform:none}
+.more{border-radius:999px}
+.about{background:#fffaf5;border-radius:40px 40px 0 0;overflow:hidden}
+.about::before{top:0;height:9px;border:0;background:repeating-linear-gradient(90deg,#a74e49 0 20px,#e8c6b6 20px 32px,#8a987d 32px 44px,#fffaf5 44px 52px)}
+.ain{padding-top:16px}
+.story h3,.info2 h3{font-family:var(--font-sans);font-weight:700}
+.story h3::before,.info2 h3::before{height:15px;width:15px;border-radius:5px;background:#e8c6b6;vertical-align:-1px;margin-right:9px}
+.clist a{color:#a74e49}
+.social a{background:#f8f1e7;border:1px solid #e8d3c5;border-radius:999px;padding:9px 18px;font-weight:600}
+.social a:hover{background:#f3e1d8}
+footer{background:#37312f}
+.dlg{border-radius:26px}
+.gal .big{border-radius:18px}
+.btn{border-radius:999px}
+.btn.primary{background:#a74e49;border-color:#a74e49}
+.contact{border-radius:18px}
+@media(max-width:720px){.hero{border-radius:0 0 25px 25px}.about{border-radius:28px 28px 0 0}.hcopy h1{font-size:32px}.sec.home{padding-top:43px}}
+
 </style>
 </head>
 <body>
