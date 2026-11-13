@@ -668,9 +668,20 @@ function openProduct(code){
     const link=safeLink(S["聯絡連結"]);
     const box=$("pContact");
     box.innerHTML=`<div>${esc(S["聯絡說明"]||"請透過下方方式與我們聯絡。")}</div><div style="margin-top:8px">商品編號 <b class="code">${esc(p.code)}</b></div>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;align-items:center"><button class="btn" id="pCopy">複製商品編號</button>${link?`<a class="btn link" href="${esc(link)}" target="_blank" rel="noopener">${esc(S["聯絡按鈕文字"]||"前往聯絡")}</a>`:""}</div>`;
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;align-items:center"><button class="btn" id="pCopy">僅複製編號</button>${link?`<a class="btn link" href="${esc(link)}" target="_blank" rel="noopener">${esc(S["聯絡按鈕文字"]||"前往聯絡")}</a>`:""}</div>`;
     box.hidden=false;
-    $("pCopy").onclick=async()=>{try{await navigator.clipboard.writeText(p.code);toast("已複製商品編號："+p.code)}catch{toast("請手動記下 "+p.code)}};
+    $("pCopy").onclick=async()=>{
+      const code=String(p.code||"").trim();
+      if(!code){toast("此商品沒有編號");return;}
+      try{
+        if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(code)}
+        else{
+          const t=document.createElement("textarea");t.value=code;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();
+          const ok=document.execCommand("copy");t.remove();if(!ok)throw new Error("copy failed");
+        }
+        toast("已複製編號："+code);
+      }catch{toast("無法自動複製，請手動記下編號："+code)}
+    };
   };
   $("ov").hidden=false;$("pClose").focus();
 }
