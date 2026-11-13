@@ -357,6 +357,25 @@ footer{background:#37312f}
 .hero .slide:not(.pattern){background:#9f7771!important;isolation:isolate;overflow:hidden}
 .hero .slide:not(.pattern)::before{content:"";position:absolute;inset:-32px;background-image:var(--hero-blur-image,none);background-position:center;background-size:cover;filter:blur(24px) brightness(.78);transform:scale(1.07);z-index:-1;pointer-events:none}
 .hero .slide:not(.pattern) img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain!important;object-position:center!important;filter:drop-shadow(0 4px 14px rgba(45,26,22,.22))}
+
+/* 新品輪播：左右手動切換、可點選主圖 */
+.hero{position:relative}
+.hero .slide:not(.pattern){cursor:zoom-in}
+.hero .slide[data-product]{cursor:pointer}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:9;width:46px;height:46px;border:1px solid rgba(255,255,255,.75);border-radius:50%;background:rgba(45,30,30,.48);color:white;font-size:23px;line-height:1;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(5px);transition:background .2s,transform .2s}
+.hero-arrow:hover{background:rgba(115,42,48,.88);transform:translateY(-50%) scale(1.06)}
+.hero-arrow:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero-prev{left:clamp(12px,3vw,42px)}
+.hero-next{right:clamp(12px,3vw,42px)}
+.hero-arrow[hidden]{display:none!important}
+.hero .slide:not(.on){pointer-events:none}
+.hero .slide.on{pointer-events:auto}
+.hero .slide img{pointer-events:none}
+@media(max-width:720px){.hero-arrow{width:36px;height:36px;font-size:19px}.hero-prev{left:10px}.hero-next{right:10px}}
+.hero-photo-viewer{position:fixed;inset:0;background:rgba(15,12,12,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:60px 20px 30px;cursor:zoom-out}
+.hero-photo-viewer[hidden]{display:none!important}
+.hero-photo-viewer img{max-width:100%;max-height:100%;object-fit:contain}
+.hero-photo-close{position:absolute;right:18px;top:14px;border:0;border-radius:50%;width:42px;height:42px;background:#fff;color:#372d2c;font-size:26px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -379,6 +398,8 @@ footer{background:#37312f}
     <button class="hbtn" data-go="catsec">看看作品<span aria-hidden="true">→</span></button>
   </div>
   <div class="dots" id="dots"></div>
+  <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="上一張新品照片">&#10094;</button>
+  <button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="下一張新品照片">&#10095;</button>
 </section>
 
 <main>
@@ -478,10 +499,33 @@ function renderHero(){
       if(url) slide.style.setProperty("--hero-blur-image",`url("${url.replace(/\"/g,"%22")}")`);
     }
   });
+  // 依圖片 ID 尋找所屬商品；找到就開啟商品詳情，否則放大查看照片。
+  [...$("slides").querySelectorAll(".slide:not(.pattern)")].forEach((slide,i)=>{
+    const id=imgs[i];
+    const product=PRODUCTS.find(p=>(p.photos||[]).some(photo=>String(photo)===String(id)));
+    if(product)slide.dataset.product=product.code;
+    slide.setAttribute("role","button");slide.setAttribute("tabindex","0");
+    slide.setAttribute("aria-label",product?`查看商品：${productName(product)}`:"放大查看新品照片");
+    const activate=()=>{
+      if(!slide.classList.contains("on"))return;
+      if(product){location.hash=encodeURIComponent(product.code);openProduct(product.code)}
+      else{
+        const viewer=$("heroPhotoViewer"),photo=$("heroPhotoLarge");
+        photo.src=imgURL(id,2000);photo.alt="新品照片";viewer.hidden=false;
+        $("heroPhotoClose").focus();
+      }
+    };
+    slide.addEventListener("click",activate);
+    slide.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();activate()}});
+  });
   const sl=[...$("slides").children];
   $("dots").innerHTML=sl.length>1?sl.map((_,i)=>`<button aria-label="第 ${i+1} 張形象圖" aria-pressed="${!i}"></button>`).join(""):"";
   let cur=0;const show=i=>{cur=(i+sl.length)%sl.length;sl.forEach((s,j)=>s.classList.toggle("on",j===cur));$("dots").querySelectorAll("button").forEach((b,j)=>b.setAttribute("aria-pressed",j===cur))};
   $("dots").querySelectorAll("button").forEach((b,i)=>b.onclick=()=>{show(i);restart()});
+  $("heroPrev").hidden=sl.length<2;
+  $("heroNext").hidden=sl.length<2;
+  $("heroPrev").onclick=()=>{show(cur-1);restart()};
+  $("heroNext").onclick=()=>{show(cur+1);restart()};
   const restart=()=>{clearInterval(heroTimer);if(sl.length>1&&!matchMedia("(prefers-reduced-motion: reduce)").matches)heroTimer=setInterval(()=>show(cur+1),6000)};
   restart();
 }
@@ -665,6 +709,16 @@ function demo(){
     renderHero();renderAbout();
     $("grid").innerHTML=`<div class="empty">商品暫時無法載入，請稍後重新整理。</div>`;
   }
+})();
+</script>
+<div class="hero-photo-viewer" id="heroPhotoViewer" hidden role="dialog" aria-modal="true" aria-label="新品照片預覽"><button type="button" class="hero-photo-close" id="heroPhotoClose" aria-label="關閉照片">×</button><img id="heroPhotoLarge" alt="新品照片"></div>
+<script>
+(function(){
+ const v=document.getElementById('heroPhotoViewer');
+ const close=()=>{v.hidden=true;document.getElementById('heroPhotoLarge').removeAttribute('src')};
+ document.getElementById('heroPhotoClose').addEventListener('click',close);
+ v.addEventListener('click',e=>{if(e.target===v)close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!v.hidden)close()});
 })();
 </script>
 </body>
