@@ -597,7 +597,7 @@ function render(){
   $("pats").querySelectorAll("button").forEach(b=>b.onclick=()=>{selPat=b.dataset.k;render()});
   let list=inCat.filter(p=>!selPat||p.pattern===selPat);
   const q=$("q").value.trim().toLowerCase();
-  if(q) list=list.filter(p=>[productName(p),p.code,p.desc,(p.tags||[]).join(" "),p.pattern,(catOf(p.cat)||{}).name].join(" ").toLowerCase().includes(q));
+  if(q){const terms=q.split(/\s+/).filter(Boolean);list=list.filter(p=>{const haystack=[productName(p),p.code,p.desc,(p.tags||[]).join(" "),p.pattern,(catOf(p.cat)||{}).name].join(" ").toLowerCase();return terms.every(term=>haystack.includes(term))})}
   const sort=$("sort").value;
   list.sort((a,b)=>{
     if(sort==="new") return String(b.created).localeCompare(String(a.created))||a.code.localeCompare(b.code);
@@ -670,7 +670,7 @@ function openProduct(code){
     box.innerHTML=`<div>${esc(S["聯絡說明"]||"請透過下方方式與我們聯絡。")}</div><div style="margin-top:8px">商品編號 <b class="code">${esc(p.code)}</b></div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;align-items:center"><button class="btn" id="pCopy">複製商品編號</button>${link?`<a class="btn link" href="${esc(link)}" target="_blank" rel="noopener">${esc(S["聯絡按鈕文字"]||"前往聯絡")}</a>`:""}</div>`;
     box.hidden=false;
-    $("pCopy").onclick=async()=>{try{await navigator.clipboard.writeText(p.code+" "+productName(p));toast("已複製商品編號")}catch{toast("請手動記下 "+p.code)}};
+    $("pCopy").onclick=async()=>{try{await navigator.clipboard.writeText(p.code);toast("已複製商品編號："+p.code)}catch{toast("請手動記下 "+p.code)}};
   };
   $("ov").hidden=false;$("pClose").focus();
 }
