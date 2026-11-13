@@ -499,21 +499,21 @@ function renderHero(){
       if(url) slide.style.setProperty("--hero-blur-image",`url("${url.replace(/\"/g,"%22")}")`);
     }
   });
-  // 依圖片 ID 尋找所屬商品；找到就開啟商品詳情，否則放大查看照片。
+  // 優先使用後台指定的商品編號；舊照片仍可透過商品照片 ID 自動對應。
+  let heroLinks={};
+  try{heroLinks=JSON.parse(S["首頁主圖商品"]||"{}")}catch(e){heroLinks={}}
+  // 點擊輪播照片開啟原本商品詳細資訊視窗。
   [...$("slides").querySelectorAll(".slide:not(.pattern)")].forEach((slide,i)=>{
     const id=imgs[i];
-    const product=PRODUCTS.find(p=>(p.photos||[]).some(photo=>String(photo)===String(id)));
+    const linkedCode=String(heroLinks[id]||"").trim().toUpperCase();
+    const product=linkedCode?PRODUCTS.find(p=>p.code===linkedCode):PRODUCTS.find(p=>(p.photos||[]).some(photo=>String(photo)===String(id)));
     if(product)slide.dataset.product=product.code;
     slide.setAttribute("role","button");slide.setAttribute("tabindex","0");
-    slide.setAttribute("aria-label",product?`查看商品：${productName(product)}`:"放大查看新品照片");
+    slide.setAttribute("aria-label",product?`查看商品：${productName(product)}，編號 ${product.code}`:"此照片尚未連結上架商品");
     const activate=()=>{
       if(!slide.classList.contains("on"))return;
       if(product){location.hash=encodeURIComponent(product.code);openProduct(product.code)}
-      else{
-        const viewer=$("heroPhotoViewer"),photo=$("heroPhotoLarge");
-        photo.src=imgURL(id,2000);photo.alt="新品照片";viewer.hidden=false;
-        $("heroPhotoClose").focus();
-      }
+      else{toast(linkedCode?"找不到對應的上架商品，請到後台確認商品編號":"這張照片尚未設定商品編號，請到後台設定")}
     };
     slide.addEventListener("click",activate);
     slide.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();activate()}});
