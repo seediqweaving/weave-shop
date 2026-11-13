@@ -353,6 +353,10 @@ footer{background:#37312f}
 /* 新品照片完整顯示，不裁切；不同長寬比以暖米色留白 */
 .hero .slide:not(.pattern){background:#f1e5da!important}
 .hero .slide img{width:100%;height:100%;object-fit:contain!important;object-position:center center!important}
+/* 新品輪播：完整照片 + 同圖柔焦背景，直式照片也不留大片空白 */
+.hero .slide:not(.pattern){background:#9f7771!important;isolation:isolate;overflow:hidden}
+.hero .slide:not(.pattern)::before{content:"";position:absolute;inset:-32px;background-image:var(--hero-blur-image,none);background-position:center;background-size:cover;filter:blur(24px) brightness(.78);transform:scale(1.07);z-index:-1;pointer-events:none}
+.hero .slide:not(.pattern) img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain!important;object-position:center!important;filter:drop-shadow(0 4px 14px rgba(45,26,22,.22))}
 </style>
 </head>
 <body>
@@ -466,6 +470,14 @@ function renderHero(){
   $("hS").hidden=!$("hS").textContent;
   const imgs=list2(S["首頁主圖"]||S["形象圖"]||S["新品主圖"]);
   $("slides").innerHTML=imgs.length?imgs.map((id,i)=>`<div class="slide${i?"":" on"}">${imgTag(id,2000,i?"":store,false)}</div>`).join(""):`<div class="slide pattern on"></div>`;
+  // 每張主圖以自身照片填滿模糊背景；主照片維持完整比例。
+  [...$("slides").querySelectorAll(".slide:not(.pattern)")].forEach(slide=>{
+    const photo=slide.querySelector("img");
+    if(photo){
+      const url=photo.getAttribute("src")||"";
+      if(url) slide.style.setProperty("--hero-blur-image",`url("${url.replace(/\"/g,"%22")}")`);
+    }
+  });
   const sl=[...$("slides").children];
   $("dots").innerHTML=sl.length>1?sl.map((_,i)=>`<button aria-label="第 ${i+1} 張形象圖" aria-pressed="${!i}"></button>`).join(""):"";
   let cur=0;const show=i=>{cur=(i+sl.length)%sl.length;sl.forEach((s,j)=>s.classList.toggle("on",j===cur));$("dots").querySelectorAll("button").forEach((b,j)=>b.setAttribute("aria-pressed",j===cur))};
