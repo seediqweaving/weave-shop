@@ -1,3 +1,3 @@
 // 把 Apps Script「網頁應用程式」的網址貼在引號裡（以 https://script.google.com/macros/s/ 開頭、/exec 結尾）
 // 留空 = 示範模式，會顯示假商品，方便先看畫面
-window.SHOP_API_URL = "https://script.google.com/macros/s/AKfycbwtPwdXxfTS-PemBDPV8txZosiYzTMYaOFdY7zqoH7OnpewzZVk1e6MmIsktydkFUdXDw/exec";
+window.SHOP_API_URL = "https://script.google.com/macros/s/AKfycbzuRUrDGLac7paezr0YcO9u5hLH8wrPmjn3Kgi4znZpflrVObK109rFMZvtcCgW5NcG/exec";
